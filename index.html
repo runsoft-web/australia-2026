@@ -1,513 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australia 2026 Adventure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @media (max-width: 768px) {
-            .desktop-nav {
-                display: none;
-            }
-        }
-        @media (min-width: 769px) {
-            .mobile-menu-btn {
-                display: none;
-            }
-            .mobile-menu {
-                display: none !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia 2026 Adventure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body class="bg-gradient-to-b from-sky-200 via-white to-orange-100 text-gray-800">
 
-<!-- Navigation -->
-<nav class="bg-white shadow sticky top-0 z-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-3">
-        <div class="flex justify-between items-center">
-            <h1 class="text-lg md:text-xl font-bold text-sky-700">Australia 2026 Adventure</h1>
+      <div class="flex justify-between items-center">
+        <h1 class="text-lg md:text-xl font-bold text-sky-700">Australia 2026 Eventyr!</h1>
 
-            <!-- Mobile menu button -->
-            <button class="mobile-menu-btn md:hidden" onclick="toggleMenu()" aria-label="Toggle menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn md:hidden" onclick="toggleMenu()" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
 
-            <!-- Desktop menu -->
-            <div class="desktop-nav hidden md:flex space-x-4 lg:space-x-6 text-sm lg:text-base">
-                <a href="#summary" class="hover:text-orange-600">Summary</a>
-                <a href="#detailed" class="hover:text-orange-600">Schedule</a>
-                <a href="#activities" class="hover:text-orange-600">Activities</a>
-                <a href="#accommodation" class="hover:text-orange-600">Accommodation</a>
-                <a href="#logistics" class="hover:text-orange-600">Logistics</a>
-                <a href="#packing" class="hover:text-orange-600">Packing</a>
-                <a href="#emergency" class="hover:text-orange-600">Emergency</a>
-            </div>
+        <!-- Desktop menu -->
+        <div class="desktop-nav hidden md:flex space-x-4 lg:space-x-6 text-sm lg:text-base">
+          <a href="#summary" class="hover:text-orange-600">Oversikt</a>
+          <a href="#detailed" class="hover:text-orange-600">Tidstabell</a>
+          <a href="#activities" class="hover:text-orange-600">Aktiviteter</a>
+          <a href="#accommodation" class="hover:text-orange-600">Overnatting</a>
+          <a href="#logistics" class="hover:text-orange-600">Logistikk</a>
+          <a href="#packing" class="hover:text-orange-600">Pakkliste</a>
+          <a href="#emergency" class="hover:text-orange-600">Nødstilfelle</a>
         </div>
+      </div>
 
-        <!-- Mobile menu dropdown -->
-        <div class="mobile-menu hidden flex-col space-y-2 pt-4 pb-2" id="mobileMenu">
-            <a href="#summary" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Summary</a>
-            <a href="#detailed" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Schedule</a>
-            <a href="#activities" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Activities</a>
-            <a href="#accommodation" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Accommodation</a>
-            <a href="#logistics" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Logistics</a>
-            <a href="#packing" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Packing</a>
-            <a href="#emergency" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Emergency</a>
-        </div>
+      <!-- Mobile menu dropdown -->
+      <div class="mobile-menu hidden flex-col space-y-2 pt-4 pb-2" id="mobileMenu">
+        <a href="#summary" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Oversikt</a>
+        <a href="#detailed" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Tidstabell</a>
+        <a href="#activities" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded"
+          onclick="toggleMenu()">Aktiviteter</a>
+        <a href="#accommodation" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded"
+          onclick="toggleMenu()">Overnatting</a>
+        <a href="#logistics" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded"
+          onclick="toggleMenu()">Logistikk</a>
+        <a href="#packing" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded" onclick="toggleMenu()">Pakkliste</a>
+        <a href="#emergency" class="block py-2 px-4 text-sm hover:bg-sky-50 rounded"
+          onclick="toggleMenu()">Nødstilfelle</a>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<!-- Cover / Summary -->
-<section id="summary" class="min-h-screen flex flex-col items-center justify-center p-4 md:p-10 text-center">
-    <h1 class="text-3xl md:text-5xl font-extrabold text-sky-700 mb-4">🌏 Australia 2026 Adventure</h1>
-    <h2 class="text-lg md:text-2xl font-semibold text-orange-600 mb-4 md:mb-6 px-4">IRONMAN 70.3 Sunshine Coast + East Coast Exploration</h2>
-    <p class="text-base md:text-lg text-gray-600 italic mb-8 md:mb-12">28 August – 17 September 2026</p>
+  <!-- Cover / Summary -->
+  <section id="summary" class="min-h-screen flex flex-col items-center justify-center p-4 md:p-10 text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold text-sky-700 mb-4">🌏 Australia 2026 Eventyr!</h1>
+    <h2 class="text-lg md:text-2xl font-semibold text-orange-600 mb-4 md:mb-6 px-4">IRONMAN 70.3 Sunshine Coast +
+      Utforskning av østkysten</h2>
+    <p class="text-base md:text-lg text-gray-600 italic mb-8 md:mb-12">? – 17 September 2026</p>
     <p class="text-lg md:text-xl font-bold text-sky-900 mb-6 md:mb-10">🏊 🚴 🏃 Race hard. Explore harder.</p>
 
 
     <!-- Elements Schedule -->
     <section id="elements" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
-        <p class="mb-4 text-sm md:text-base">Key elements of the trip include:</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-left mb-6 md:mb-10">
-            <div class="p-3 md:p-4 bg-sky-50 rounded-xl shadow text-sm md:text-base">
-                🐠 <strong>Great Barrier Reef</strong><br> Snorkel & dive in Cairns
-            </div>
-            <div class="p-3 md:p-4 bg-emerald-50 rounded-xl shadow text-sm md:text-base">
-                🌴 <strong>Daintree Rainforest</strong><br> Explore ancient jungles
-            </div>
-            <div class="p-3 md:p-4 bg-yellow-50 rounded-xl shadow text-sm md:text-base">
-                🚙 <strong>Fraser Island</strong><br> 75-Mile Beach & Lake McKenzie
-            </div>
-            <div class="p-3 md:p-4 bg-pink-50 rounded-xl shadow text-sm md:text-base">
-                🏝️ <strong>North Stradbroke</strong><br> Clifftop walks & beaches
-            </div>
-            <div class="p-3 md:p-4 bg-indigo-50 rounded-xl shadow text-sm md:text-base">
-                🌊 <strong>Byron Bay</strong><br> Surf & lighthouse hike
-            </div>
-            <div class="p-3 md:p-4 bg-purple-50 rounded-xl shadow text-sm md:text-base">
-                🏙️ <strong>Sydney</strong><br> Opera House & Harbour Bridge
-            </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 text-left mb-6 md:mb-10">
+        <div class="p-3 md:p-4 bg-sky-50 rounded-xl shadow text-sm md:text-base">
+          🐠 <strong>Great Barrier Reef</strong><br> Snorkel & dykking i Cairns
         </div>
+        <div class="p-3 md:p-4 bg-emerald-50 rounded-xl shadow text-sm md:text-base">
+          🌴 <strong>Daintree Rainforest</strong><br> Utforsk eldgamle jungler
+        </div>
+        <div class="p-3 md:p-4 bg-yellow-50 rounded-xl shadow text-sm md:text-base">
+          🚙 <strong>Fraser Island</strong><br> 120-km strand & Lake McKenzie
+        </div>
+        <div class="p-3 md:p-4 bg-pink-50 rounded-xl shadow text-sm md:text-base">
+          🏝️ <strong>North Stradbroke</strong><br> Klippetoppturer & strender
+        </div>
+        <div class="p-3 md:p-4 bg-indigo-50 rounded-xl shadow text-sm md:text-base">
+          🌊 <strong>Byron Bay</strong><br> Surfing & lighthouse tur
+        </div>
+        <div class="p-3 md:p-4 bg-purple-50 rounded-xl shadow text-sm md:text-base">
+          🏙️ <strong>Sydney</strong><br> Operahus & Harbour Bridge
+        </div>
+      </div>
     </section>
 
     <!-- Quick Summary Table -->
     <div class="overflow-x-auto w-full max-w-3xl px-2">
-        <table class="table-auto w-full border border-gray-300 shadow bg-white rounded-xl text-xs md:text-base">
-            <thead>
-            <tr class="bg-sky-100">
-                <th class="px-2 md:px-4 py-2">Date</th>
-                <th class="px-2 md:px-4 py-2">Location</th>
-                <th class="px-2 md:px-4 py-2">Highlight</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr><td class="border px-2 md:px-4 py-2">28 Aug</td><td class="border px-2 md:px-4 py-2">Flight</td><td class="border px-2 md:px-4 py-2">Depart Oslo → Cairns</td></tr>
-            <tr><td class="border px-2 md:px-4 py-2">30 Aug</td><td class="border px-2 md:px-4 py-2">Cairns</td><td class="border px-2 md:px-4 py-2">Great Barrier Reef</td></tr>
-            <tr><td class="border px-2 md:px-4 py-2">31 Aug</td><td class="border px-2 md:px-4 py-2">Cairns</td><td class="border px-2 md:px-4 py-2">Daintree Rainforest</td></tr>
-            <tr><td class="border px-2 md:px-4 py-2">5 Sep</td><td class="border px-2 md:px-4 py-2">Brisbane</td><td class="border px-2 md:px-4 py-2">Moreton Island</td></tr>
-            <tr><td class="border px-2 md:px-4 py-2">8 Sep</td><td class="border px-2 md:px-4 py-2">Fraser Island</td><td class="border px-2 md:px-4 py-2">2-day 4WD Tour</td></tr>
-            <tr><td class="border px-2 md:px-4 py-2">13 Sep</td><td class="border px-2 md:px-4 py-2">Mooloolaba</td><td class="border px-2 md:px-4 py-2">IRONMAN 70.3 Race</td></tr>
-            <tr><td class="border px-2 md:px-4 py-2">15 Sep</td><td class="border px-2 md:px-4 py-2">Sydney</td><td class="border px-2 md:px-4 py-2">Opera House, Harbour Bridge</td></tr>
-            </tbody>
-        </table>
+      <table class="table-auto w-full border border-gray-300 shadow bg-white rounded-xl text-xs md:text-base">
+        <thead>
+          <tr class="bg-sky-100">
+            <th class="px-2 md:px-4 py-2">Dato</th>
+            <th class="px-2 md:px-4 py-2">Lokasjon</th>
+            <th class="px-2 md:px-4 py-2">Høydepunkt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">28 Aug</td>
+            <td class="border px-2 md:px-4 py-2">Flytur</td>
+            <td class="border px-2 md:px-4 py-2">Avreise Oslo → Cairns</td>
+          </tr>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">30 Aug</td>
+            <td class="border px-2 md:px-4 py-2">Cairns</td>
+            <td class="border px-2 md:px-4 py-2">Great Barrier Reef</td>
+          </tr>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">31 Aug</td>
+            <td class="border px-2 md:px-4 py-2">Cairns</td>
+            <td class="border px-2 md:px-4 py-2">Daintree Rainforest</td>
+          </tr>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">5 Sep</td>
+            <td class="border px-2 md:px-4 py-2">Brisbane</td>
+            <td class="border px-2 md:px-4 py-2">Moreton Island</td>
+          </tr>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">8 Sep</td>
+            <td class="border px-2 md:px-4 py-2">Fraser Island</td>
+            <td class="border px-2 md:px-4 py-2">2-day 4WD Tour</td>
+          </tr>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">13 Sep</td>
+            <td class="border px-2 md:px-4 py-2">Mooloolaba</td>
+            <td class="border px-2 md:px-4 py-2">IRONMAN 70.3 Race</td>
+          </tr>
+          <tr>
+            <td class="border px-2 md:px-4 py-2">15 Sep</td>
+            <td class="border px-2 md:px-4 py-2">Sydney</td>
+            <td class="border px-2 md:px-4 py-2">Opera House, Harbour Bridge</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</section>
+  </section>
 
-<!-- Detailed Schedule -->
-<section id="detailed" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
+  <!-- Detailed Schedule -->
+  <section id="detailed" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
 
-    <h2 class="text-xl md:text-2xl font-bold text-sky-700 mb-4">East Coast Australia Road Trip Itinerary (Adventure Edition)</h2>
+    <h2 class="text-xl md:text-2xl font-bold text-sky-700 mb-4">Reiseplan for biltur langs østkysten av Australia
+      (Adventure Edition)</h2>
 
     <!-- Legend -->
     <div class="mb-6">
-        <p class="font-semibold text-sm md:text-base">Legend</p>
-        <p class="text-xs md:text-sm text-gray-700">🏨 = Accommodation | 🍽️ = Food Recommendation | 🎯 = Main Activity</p>
-        <hr class="my-4" />
+      <p class="font-semibold text-sm md:text-base">Tegnbetydning</p>
+      <p class="text-xs md:text-sm text-gray-700">🏨 = Overnatting | 🍽️ = Mat Anbefaling | 🎯 = Hovedaktivitet</p>
+      <hr class="my-4" />
     </div>
 
     <!-- Day blocks -->
     <div class="space-y-4 md:space-y-6">
 
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 1 — <strong>25 Aug: Arrive Cairns</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Crystalbrook Riley (luxury) / Gilligan's (budget, social)</p>
-            <p class="text-sm md:text-base">🍽️: Ochre (modern Australian), Salt House (waterfront)</p>
-            <p class="text-sm md:text-base">🎯: Cairns Esplanade, Botanic Gardens, Lagoon swim</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="list-none mt-2 text-xs md:text-sm space-y-1">
-                    <li>09:00 – Arrive & check-in</li>
-                    <li>12:00 – Lunch at Ochre</li>
-                    <li>14:00 – Esplanade walk & Botanic Gardens</li>
-                    <li>18:00 – Dinner at Salt House</li>
-                    <li>20:00 – Optional: Night Markets</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 2 — <strong>26 Aug: Cairns – Great Barrier Reef</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Crystalbrook Riley / Gilligan's</p>
-            <p class="text-sm md:text-base">🍽️: Prawn Star (casual, marina), Muddy's Café (breakfast)</p>
-            <p class="text-sm md:text-base">🎯: Full-day snorkeling/diving tour</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>07:00 – Breakfast at Muddy's Café</li>
-                    <li>08:00 – Depart for Reef Cruise (e.g., Passions of Paradise)</li>
-                    <li>16:00 – Return, relax by lagoon</li>
-                    <li>18:00 – Dinner at Prawn Star</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 3 — <strong>27 Aug: Daintree Rainforest & Cape Tribulation</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Crystalbrook Riley / Gilligan's</p>
-            <p class="text-sm md:text-base">🍽️: Lunch included on tour, Ganbaranba Ramen (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Daintree/Cape Tribulation guided day tour (Billy Tea Safaris)</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>07:00 – Early pick-up (tour bus)</li>
-                    <li>09:00 – Mossman Gorge walk</li>
-                    <li>12:00 – Daintree River cruise, BBQ lunch</li>
-                    <li>15:00 – Cape Tribulation beach</li>
-                    <li>18:00 – Return; ramen dinner</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 4 — <strong>28 Aug: Cairns → Mission Beach</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Castaways Resort (beachfront), Jackaroo Hostel (budget)</p>
-            <p class="text-sm md:text-base">🍽️: The Shack Café (breakfast), Bingil Bay Café (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Drive to Mission Beach (2 hrs), beach time</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Check out, breakfast at The Shack</li>
-                    <li>10:00 – Drive to Mission Beach</li>
-                    <li>13:00 – Check in; lunch/relax at Castaways</li>
-                    <li>15:00 – Walk along the beach, rainforest trails</li>
-                    <li>18:00 – Dinner at Bingil Bay Café</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 5 — <strong>29 Aug: Mission Beach → Townsville</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: The Ville Resort (waterfront), Rambutan Hostel (budget)</p>
-            <p class="text-sm md:text-base">🍽️: Townsville Brewery (lunch), Rockpool Pavilion (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Scenic drive (3 hrs), Magnetic Island ferry</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Castaways</li>
-                    <li>09:00 – Depart, drive via Hinchinbrook lookout</li>
-                    <li>12:00 – Lunch at Townsville Brewery</li>
-                    <li>14:00 – Magnetic Island ferry (20 min)</li>
-                    <li>16:00 – Explore Horseshoe Bay</li>
-                    <li>18:30 – Dinner at Rockpool Pavilion</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 6 — <strong>30 Aug: Magnetic Island</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Bungalow Bay Koala Village (unique), Peppers Blue on Blue (luxury)</p>
-            <p class="text-sm md:text-base">🍽️: Early café breakfast, Fruits & Scoops (snack), Sandi's (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Wildlife park, beach hopping, snorkeling, hiking</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at local café</li>
-                    <li>09:00 – Koala and wildlife park</li>
-                    <li>11:00 – Snorkel at Geoffrey Bay</li>
-                    <li>14:00 – Picnic at Radical Bay</li>
-                    <li>18:00 – Dinner at Sandi's</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 7 — <strong>31 Aug: Townsville → Airlie Beach (Whitsundays)</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Coral Sea Resort (mid-range), Base Backpackers (budget)</p>
-            <p class="text-sm md:text-base">🍽️: Treehouse Café (breakfast), Fish D'vine (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Drive (3.5 hrs), Airlie Beach Lagoon, local shops</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Treehouse Café</li>
-                    <li>09:00 – Drive to Airlie Beach</li>
-                    <li>13:00 – Check in, swim at Lagoon</li>
-                    <li>16:00 – Explore shops, marina</li>
-                    <li>18:00 – Dinner at Fish D'vine</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Days 8-9 — <strong>1–2 Sep: Whitsunday Islands Sailing</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Onboard Whitsunday sailing boat (e.g., Whitsunday Blue, Atlantic Clipper)</p>
-            <p class="text-sm md:text-base">🍽️: All meals onboard, Sorrento (pre/post tour)</p>
-            <p class="text-sm md:text-base">🎯: Sailing, Whitehaven Beach, snorkeling</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable (sample)</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Board boat, safety briefing</li>
-                    <li>10:00 – Sail to Whitehaven Beach</li>
-                    <li>12:00 – Beach walk, lunch</li>
-                    <li>15:00 – Snorkeling at coral reefs</li>
-                    <li>18:00 – Sunset on deck, dinner</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 10 — <strong>3 Sep: Airlie Beach → Agnes Water/Rockhampton</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Agnes Water Beach Holidays (cabins), YHA Rockhampton</p>
-            <p class="text-sm md:text-base">🍽️: Holidays Café (breakfast), Driftwood Café (Agnes Water)</p>
-            <p class="text-sm md:text-base">🎯: Drive (5–6 hrs), visit Capricorn Caves, relax at beach</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Holidays Café</li>
-                    <li>09:00 – Drive via Mackay, Rockhampton</li>
-                    <li>14:00 – Capricorn Caves tour (if passing)</li>
-                    <li>17:00 – Arrive Agnes Water, check-in</li>
-                    <li>18:00 – Dinner at Driftwood Café</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 11 — <strong>4 Sep: Agnes Water → Bundaberg/Hervey Bay</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Akama Resort (Hervey Bay), Kelly's Beach Resort (Bundaberg)</p>
-            <p class="text-sm md:text-base">🍽️: Grunske's by the River (seafood), Enzo's on the Beach (Hervey Bay, lunch)</p>
-            <p class="text-sm md:text-base">🎯: Drive (2–3 hrs), visit Bundaberg Rum Distillery or turtle center</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Driftwood Café</li>
-                    <li>09:00 – Drive to Bundaberg (distillery tour)</li>
-                    <li>12:00 – Lunch at Grunske's</li>
-                    <li>14:00 – Drive onward to Hervey Bay</li>
-                    <li>17:00 – Check in, sunset walk</li>
-                    <li>19:00 – Dinner at Enzo's</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Days 12-13 — <strong>5–6 Sep: Fraser Island (K'gari)</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Kingfisher Bay Resort (on island), Eurong Beach Resort</p>
-            <p class="text-sm md:text-base">🍽️: Resort meals, picnic lunch (included in tour)</p>
-            <p class="text-sm md:text-base">🎯: 2-day 4WD tour: Lake McKenzie, Eli Creek, rainforest, shipwrecks</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable (sample)</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>07:00 – Pickup for Fraser Island tour</li>
-                    <li>09:00 – Lake McKenzie swim</li>
-                    <li>12:00 – Picnic lunch, Eli Creek</li>
-                    <li>15:00 – Maheno Shipwreck, Central Station</li>
-                    <li>18:00 – Resort dinner</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 14 — <strong>7 Sep: Hervey Bay → Sunshine Coast</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Mantra Mooloolaba Beach, Mooloolaba Backpackers</p>
-            <p class="text-sm md:text-base">🍽️: The Velo Project (brunch), Rice Boi (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Drive (3.5 hrs), arrive Mooloolaba, recover, beach</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at resort</li>
-                    <li>09:00 – Drive to Sunshine Coast</li>
-                    <li>12:00 – Brunch at The Velo Project</li>
-                    <li>15:00 – Beach, relax</li>
-                    <li>18:00 – Dinner at Rice Boi</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Days 15–19 — <strong>8–12 Sep: Sunshine Coast (Race Prep & Explore)</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Mantra Mooloolaba Beach, local Airbnbs</p>
-            <p class="text-sm md:text-base">🍽️: Raw Energy (health food), Spice Bar (dinner, upscale)</p>
-            <p class="text-sm md:text-base">🎯: Ironman prep, Noosa National Park, Australia Zoo, Glass House Mountains</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Typical day (sample)</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Raw Energy</li>
-                    <li>09:00 – Easy swim or run</li>
-                    <li>11:00 – Explore Noosa, beach, shopping</li>
-                    <li>13:00 – Lunch at Noosa Heads Surf Club</li>
-                    <li>15:00 – Australia Zoo or Glass House Mountains hike</li>
-                    <li>18:00 – Dinner at Spice Bar</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 20 — <strong>13 Sep: Ironman 70.3 Sunshine Coast</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: Mantra Mooloolaba Beach</p>
-            <p class="text-sm md:text-base">🍽️: Post-race celebration at The Wharf Tavern</p>
-            <p class="text-sm md:text-base">🎯: Race day & recovery</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>05:00 – Early breakfast, race check-in</li>
-                    <li>06:00 – Ironman event</li>
-                    <li>15:00 – Finish, beach recovery</li>
-                    <li>18:00 – Celebration dinner</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 21 — <strong>14 Sep: Sunshine Coast → Byron Bay</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: The Atlantic Byron Bay (boutique), Wake Up! Byron Bay (budget)</p>
-            <p class="text-sm md:text-base">🍽️: Bayleaf Café (brunch), Beach Hotel (dinner)</p>
-            <p class="text-sm md:text-base">🎯: Drive (4.5 hrs), lighthouse walk, surf</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Mantra</li>
-                    <li>09:00 – Drive to Byron Bay</li>
-                    <li>13:00 – Brunch at Bayleaf Café</li>
-                    <li>15:00 – Lighthouse walk, Main Beach swim</li>
-                    <li>18:00 – Dinner at Beach Hotel</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 22 — <strong>15 Sep: Byron Bay → Sydney</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: The Old Clare Hotel (boutique), YHA Sydney Harbour (budget)</p>
-            <p class="text-sm md:text-base">🍽️: The Grounds of Alexandria (brunch), Opera Bar (dinner, views)</p>
-            <p class="text-sm md:text-base">🎯: Drive (8 hrs, optional flight), Sydney sights</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>07:00 – Early breakfast, depart</li>
-                    <li>15:00 – Arrive Sydney (if driving), check-in</li>
-                    <li>16:00 – Circular Quay, Opera House walk</li>
-                    <li>19:00 – Dinner at Opera Bar</li>
-                </ul>
-            </div>
-        </article>
-
-        <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
-            <h3 class="text-base md:text-lg font-bold">Day 23 — <strong>16 Sep: Sydney – Explore & Depart</strong></h3>
-            <p class="mt-2 text-sm md:text-base">🏨: N/A (flight day)</p>
-            <p class="text-sm md:text-base">🍽️: Bills (breakfast), Bondi Icebergs (lunch), Mr. Wong (dinner, if time)</p>
-            <p class="text-sm md:text-base">🎯: Bondi Beach, coastal walk, final shopping, departure</p>
-            <div class="mt-3 bg-white p-3 rounded shadow-sm">
-                <p class="font-semibold text-sm md:text-base">Timetable</p>
-                <ul class="mt-2 text-xs md:text-sm space-y-1">
-                    <li>08:00 – Breakfast at Bills</li>
-                    <li>09:00 – Bondi Beach, coastal walk to Coogee</li>
-                    <li>13:00 – Lunch at Bondi Icebergs</li>
-                    <li>15:00 – Souvenir shopping, relax</li>
-                    <li>18:00 – Depart for airport (ensure Oslo arrival by 17 Sep 00:00)</li>
-                </ul>
-            </div>
-        </article>
-
+      <article class="p-3 md:p-4 border rounded-lg bg-sky-50">
+        <h3 class="text-base md:text-lg font-bold">Day 1 — <strong>? Aug/Sept: Ankommer Cairns</strong></h3>
+        <div class="mt-3 bg-white p-3 rounded shadow-sm">
+          <p class="font-semibold text-sm md:text-base">Tidstabell</p>
+          <ul class="list-none mt-2 text-xs md:text-sm space-y-1">
+            <li>Kommer!</li>
+          </ul>
+        </div>
+      </article>
     </div>
 
     <!-- Tips -->
     <div class="mt-6 md:mt-8 p-3 md:p-4 bg-yellow-50 rounded-lg border">
-        <h4 class="font-semibold text-sm md:text-base">Tips</h4>
-        <ul class="list-disc ml-5 mt-2 text-xs md:text-sm space-y-1">
-            <li>Book key accommodations early (Whitsundays sailing, Fraser Island tour, Ironman base).</li>
-            <li>Reservations recommended for popular restaurants, especially weekends.</li>
-            <li>Mix cafes, pubs, and fine dining for variety.</li>
-            <li>Enjoy local markets for snacks and authentic experiences.</li>
-        </ul>
+      <h4 class="font-semibold text-sm md:text-base">Tips</h4>
+      <ul class="list-disc ml-5 mt-2 text-xs md:text-sm space-y-1">
+        <li>Bestill viktige overnattingssteder tidlig (seiling på Whitsundays, tur til Fraser Island, Ironman-basen).
+        </li>
+        <li>Det anbefales å reservere bord på populære restauranter, spesielt i helgene.</li>
+        <li>Bland kafeer, puber og fine restauranter for variasjon.</li>
+        <li>Nyt lokale markeder for snacks og autentiske opplevelser.</li>
+      </ul>
     </div>
 
 
-</section>
+  </section>
 
-<!-- Activities -->
-<section id="activities" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Activities</h2>
+  <!-- Activities -->
+  <section id="activities" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Aktiviteter</h2>
     <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-        <li>🐠 Great Barrier Reef: <a href="https://www.downundertours.com.au" target="_blank" class="text-sky-600 underline">Down Under Cruise & Dive</a></li>
-        <li>🌴 Daintree Rainforest: <a href="https://www.australianexplorer.com/daintree.htm" target="_blank" class="text-sky-600 underline">Daintree Discovery Tours</a></li>
-        <li>🚙 Fraser Island: <a href="https://www.fraser-tours.com/" target="_blank" class="text-sky-600 underline">Fraser Tours</a></li>
-        <li>🐬 Moreton Island: <a href="https://www.moretonislandadventures.com.au/" target="_blank" class="text-sky-600 underline">Moreton Adventures</a></li>
-        <li>🏝️ North Stradbroke Island: <a href="https://stradbrokeisland.com/" target="_blank" class="text-sky-600 underline">Visit Stradbroke</a></li>
-        <li>🏙️ Sydney Opera House: <a href="https://www.sydneyoperahouse.com/" target="_blank" class="text-sky-600 underline">Official Site</a></li>
+      <li>🐠 Great Barrier Reef: <a href="https://www.downundertours.com.au" target="_blank"
+          class="text-sky-600 underline">Down Under Cruise & Dive</a></li>
+      <li>🌴 Daintree Rainforest: <a href="https://www.australianexplorer.com/daintree.htm" target="_blank"
+          class="text-sky-600 underline">Daintree Discovery Tours</a></li>
+      <li>🚙 Fraser Island: <a href="https://www.fraser-tours.com/" target="_blank"
+          class="text-sky-600 underline">Fraser Tours</a></li>
+      <li>🐬 Moreton Island: <a href="https://www.moretonislandadventures.com.au/" target="_blank"
+          class="text-sky-600 underline">Moreton Adventures</a></li>
+      <li>🏝️ North Stradbroke Island: <a href="https://stradbrokeisland.com/" target="_blank"
+          class="text-sky-600 underline">Visit Stradbroke</a></li>
+      <li>🏙️ Sydney Opera House: <a href="https://www.sydneyoperahouse.com/" target="_blank"
+          class="text-sky-600 underline">Official Site</a></li>
     </ul>
-</section>
+  </section>
 
-<!-- Accommodation -->
-<section id="accommodation" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Accommodation</h2>
+  <!-- Accommodation -->
+  <section id="accommodation" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Overnatting</h2>
     <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-        <li><b>Cairns (Aug 29 – Sep 2):</b> Example: Shangri-La The Marina</li>
-        <li><b>Gold Coast (Sep 2 – Sep 4):</b> Example: QT Gold Coast</li>
-        <li><b>Brisbane (Sep 4 – Sep 7):</b> Example: Emporium Hotel</li>
-        <li><b>Sunshine Coast (Sep 7 – Sep 14):</b> Example: Mantra Mooloolaba Beach</li>
-        <li><b>Sydney (Sep 14 – Sep 17):</b> Example: Park Hyatt Sydney</li>
+      <li><b>Cairns (Aug 29 – Sep 2):</b> Example: Shangri-La The Marina</li>
+      <li><b>Gold Coast (Sep 2 – Sep 4):</b> Example: QT Gold Coast</li>
+      <li><b>Brisbane (Sep 4 – Sep 7):</b> Example: Emporium Hotel</li>
+      <li><b>Sunshine Coast (Sep 7 – Sep 14):</b> Example: Mantra Mooloolaba Beach</li>
+      <li><b>Sydney (Sep 14 – Sep 17):</b> Example: Park Hyatt Sydney</li>
     </ul>
-</section>
+  </section>
 
-<!-- Logistics -->
-<section id="logistics" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Logistics & Travel</h2>
+  <!-- Logistics -->
+  <section id="logistics" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Logistikk & Reise</h2>
     <div class="space-y-2 text-sm md:text-base">
-        <p><b>International Flights:</b> Oslo → Cairns (28 Aug), Sydney → Oslo (17 Sep)</p>
-        <p><b>Domestic Flights:</b> Cairns → Brisbane (2 Sep), Brisbane → Sydney (14 Sep)</p>
-        <p><b>Transport:</b> Car rentals in Sunshine Coast, ferries for islands (Moreton, Stradbroke, Fraser).</p>
+      <p><b>International flytur:</b> Oslo → Cairns (28 Aug), Sydney → Oslo (17 Sep)</p>
+      <p><b>Domestic flytur:</b> Cairns → Brisbane (2 Sep), Brisbane → Sydney (14 Sep)</p>
+      <p><b>Transport:</b> Bilutleie i Sunshine Coast, ferger til øyer (Moreton, Stradbroke, Fraser).</p>
     </div>
-</section>
+  </section>
 
-<!-- Packing -->
-<section id="packing" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Packing & Tips</h2>
+  <!-- Packing -->
+  <section id="packing" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Pakking & Tips</h2>
     <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-        <li>Triathlon race kit (wetsuit, bike, shoes)</li>
-        <li>Reef-safe sunscreen, hat, sunglasses</li>
-        <li>Lightweight rain jacket & hiking shoes</li>
-        <li>Travel adapters (Type I plugs), unlocked phone for SIM</li>
-    </ul>
-</section>
+      <li>Triatlon-sett (våtdrakt, sykkel, sko)</li>
+      <li>Reef-sikker solkrem, hatt, solbriller</li>
+      <li>Lett regnjakke og tursko</li>
+      <li>Reiseadaptere (Type I-plugger)</li>
 
-<!-- Emergency -->
-<section id="emergency" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Emergency Info</h2>
+    </ul>
+  </section>
+
+  <!-- Emergency -->
+  <section id="emergency" class="w-full max-w-4xl mx-auto p-4 md:p-6 bg-white rounded-2xl shadow-lg mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-6 md:mb-8">Nødstilfelle</h2>
     <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-        <li>🚨 Australia emergency number: <b>000</b></li>
-        <li>🏥 Nearest hospital (Sunshine Coast): Sunshine Coast University Hospital</li>
-        <li>📞 Travel insurance: [Insert contact]</li>
-        <li>🇳🇴 Norwegian Embassy: 16 Forster Crescent, Yarralumla ACT 2600, Canberra</li>
+      <li>🚨 Australias nødnummer: <b>000</b></li>
+      <li>🏥 Nærmeste sykehus (Sunshine Coast): Sunshine Coast University Hospital</li>
+      <li>📞 Reiseforsikring: [Sett inn kontaktinformasjon]</li>
+      <li>🇳🇴 Norges ambassade: 16 Forster Crescent, Yarralumla ACT 2600, Canberra</li>
     </ul>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-sky-700 text-white text-center py-6 px-4">
+  <!-- Footer -->
+  <footer class="bg-sky-700 text-white text-center py-6 px-4">
     <p class="font-semibold text-sm md:text-base">"The race is the reason. The adventure is the reward."</p>
     <p class="text-xs md:text-sm mt-2">Australia Adventure 2026 — Ironman + Exploration</p>
-</footer>
+  </footer>
 
-<!-- Mobile Menu Toggle Script -->
-<script>
+  <!-- Mobile Menu Toggle Script -->
+  <script>
     function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
     }
-</script>
+  </script>
 
 </body>
+
 </html>
